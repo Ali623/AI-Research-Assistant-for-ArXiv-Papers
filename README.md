@@ -61,6 +61,31 @@ streamlit run app.py
 ```
 
 
+## 📋 Example Queries for AI Research Assistant
+
+Use the following example prompts to test your RAG-powered research assistant on AI/ML papers from arXiv:
+
+1. **What are the key contributions of the paper titled _"On the Importance of Gaussianizing Representations"_?**
+
+2. **Summarize the recent advances in diffusion models from the latest arXiv papers.**
+
+3. **Compare the methods used in _"T2I-R1"_ and _"DALL·E"_ for text-to-image generation.**
+
+4. **What datasets were used in the paper _"Deep Reinforcement Learning for Urban Air Quality Management"_?**
+
+5. **Which papers focus on multi-modal learning techniques?**
+
+6. **Give a brief overview of transformers in computer vision based on recent arXiv submissions.**
+
+7. **List key limitations discussed in papers about reinforcement learning for real-world environments.**
+
+8. **What is the role of collaborative token-level reasoning in recent text-to-image research?**
+
+9. **Summarize contributions of top papers in generative AI from the past month.**
+
+10. **Explain the optimization techniques used in papers related to air quality modeling.**
+
+
 ## Tech Stack
 - LLM: OpenAI (GPT-3.5 / GPT-4)
 
