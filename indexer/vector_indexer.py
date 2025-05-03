@@ -31,7 +31,8 @@ def build_faiss_index(papers_file="./data/papers.json", index_path="./data/faiss
             texts.append(chunk)
             metadata.append({
                 "title": paper["title"],
-                "id": paper["id"]
+                "id": paper["id"],
+                "authors": [str(author) for author in paper.get("authors", [])]  # Convert author objects to strings
             })
 
     embeddings = model.encode(texts, show_progress_bar=True)
