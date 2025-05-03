@@ -3,7 +3,7 @@ import pickle
 from sentence_transformers import SentenceTransformer
 
 class RAGRetriever:
-    def __init__(self, index_path="../data/faiss.index", meta_path="../data/meta.pkl"):
+    def __init__(self, index_path="./data/faiss.index", meta_path="./data/meta.pkl"):
         self.index = faiss.read_index(index_path)
         with open(meta_path, "rb") as f:
             self.metadata = pickle.load(f)
