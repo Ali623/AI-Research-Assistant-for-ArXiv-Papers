@@ -2,7 +2,7 @@ import arxiv
 import os
 import json
 
-def fetch_papers(query="artificial intelligence", max_results=10):
+def fetch_papers(query="artificial intelligence", max_results=100):
     search = arxiv.Search(
         query=query,
         max_results=max_results,
@@ -22,7 +22,7 @@ def fetch_papers(query="artificial intelligence", max_results=10):
     return papers
 
 if __name__ == "__main__":
-    papers = fetch_papers("machine learning", max_results=10)
+    papers = fetch_papers("machine learning", max_results=100)
     os.makedirs("./data", exist_ok=True)
     with open("./data/papers.json", "w") as f:
         json.dump(papers, f, indent=2)
