@@ -1,16 +1,15 @@
-import openai
 import os
 from dotenv import load_dotenv
+from openai import OpenAI
 
-# Load .env file
+# Load API key from .env
 load_dotenv()
-
-# Get API key
 api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
-    raise ValueError("❌ OPENAI_API_KEY not found. Please add it to your .env file.")
+    raise ValueError("❌ OPENAI_API_KEY not found in .env")
 
-openai.api_key = api_key
+# New client-based API usage
+client = OpenAI(api_key=api_key)
 
 def generate_answer(query, docs):
     context = "\n\n".join(
@@ -26,10 +25,10 @@ Context:
 Question: {query}
 Answer:"""
 
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",  # Or "gpt-4-turbo"
+    response = client.chat.completions.create(
+        model="gpt-4-turbo",  # or "gpt-3.5-turbo"
         messages=[{"role": "user", "content": prompt}],
         temperature=0.3,
     )
 
-    return response.choices[0].message["content"]
+    return response.choices[0].message.content
